@@ -1,1 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .displayTable {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+.displayTableCell{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+// .card-container {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     margin-top: 16px;
+//   }
+
+// .card-container .card:not(:last-child) {
+//     margin-right: 0;
+//   }  
+
+//   .card-container .card:not(.highlight-card) {
+//     cursor: pointer;
+//   }
+
+// .card-container .card:not(.highlight-card):hover {
+//     transform: translateY(-3px);
+//     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+//   }
+
+// .card-container .card:not(.highlight-card):hover .material-icons path {
+//     fill: rgb(105, 103, 103);
+//   }
+
+// .github-star-badge:hover {
+//     background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+//     border-color: rgba(27,31,35,.35);
+//     background-position: -.5em;
+//   }
+  
+//   /* Responsive Styles */
+// @media screen and (max-width: 767px) {
+//     .card-container > *:not(.circle-link) ,
+//     .terminal {
+//       width: 100%;
+//     }
+
+// }

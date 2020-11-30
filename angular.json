@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-firebase-task"
+    }
+  },
+  "defaultProject": "ng-firebase-task",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,45 @@
+<div class="container">
+
+  <h1 style="margin-top: 25px;">
+    {{title}}
+  </h1>
+  <table id="cars">
+    <tr>
+      <th>Make</th>
+      <th>Max Speed</th>
+      <th>Engine Size</th>
+      <th>Created Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let item of cars">
+      <ng-container *ngIf="!item.isEdit; else elseBlock">
+        <td>{{item.Make}}</td>
+        <td>{{item.Max_speed}}</td>
+        <td>{{item.Engine_size}}</td>
+        <td>{{item.Created_date}}</td>
+        <td><button style="background-color:  rgb(163, 163, 196); border-radius: 4px;"
+            (click)="EditRecord(item)">Edit</button></td>
+        <td><button style="background-color:rgb(238, 102, 102); border-radius: 4px;"
+            (click)="RemoveRecord(item.id)">Delete</button></td>
+      </ng-container>
+
+      <ng-template #elseBlock>
+        <td class="card-title">
+          <input type="text" class="form-control" [(ngModel)]="item.Make" placeholder="Edit Make">
+        </td>
+        <td class="card-subtitle mb-2 text-muted">
+          <input type="text" class="form-control" [(ngModel)]="item.Max_speed" placeholder="Edit Max_speed">
+        </td>
+        <td class="card-text">
+          <input type="text" class="form-control" [(ngModel)]="item.Engine_size" placeholder="Edit Engine_size">
+        </td>
+        <td class="card-text">
+          <input type="date" class="form-control" [(ngModel)]="item.Created_date" placeholder="Edit Created_date">
+        </td>
+        <td><button style="background-color: rgb(173, 197, 173); border-radius: 4px;"
+            (click)="item.isEdit = false">Cancel</button></td>
+        <td><button style="background-color: rgb(163, 163, 196); border-radius: 4px;"
+            (click)="UpdateRecord(item)">Update</button></td>
+      </ng-template>
+    </tr>
