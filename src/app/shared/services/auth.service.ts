@@ -98,7 +98,6 @@ export class AuthService {
       merge: true
     })
   }
-
   // Sign out 
   SignOut() {
     return this.afAuth.signOut().then(() => {
