@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
     this.authService.SignOut().then((res)=>{
       console.log("response = ",res)
         localStorage.removeItem('user');
-        // this.router.navigate(['sign-in']);
+        this.router.navigate(['sign-in']);
     })
   }
 
