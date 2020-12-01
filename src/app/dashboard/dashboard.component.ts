@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../shared/services/auth.service';
 import { CrudService } from '../shared/services/crud.service';
 
 @Component({
@@ -49,7 +48,13 @@ export class DashboardComponent implements OnInit {
 
 
   RemoveRecord(rowID) {
-    this.crudService.delete_Car(rowID);
+    var retVal = confirm("Do you want to continue ?");
+    if( retVal == true ) {
+       console.log("User wants to continue!");
+       this.crudService.delete_Car(rowID);
+    } else {
+      console.log("User does not want to continue!");
+    }
   }
 
   UpdateRecord(recordRow) {
