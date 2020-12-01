@@ -15,7 +15,29 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if (this.authService.isLoggedIn !== true) {
+      console.log('is logged In = ','false')
       this.router.navigate(['sign-in'])
+    }
+    return true;
+  }
+
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+
+export class protectGuard implements CanActivate {
+  constructor(
+    public authService: AuthService,
+    public router: Router
+  ) { }
+  canActivate(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    if (this.authService.isLoggedIn === true) {
+      console.log('is logged In = ','true')
+      this.router.navigate(['dashboard'])
     }
     return true;
   }

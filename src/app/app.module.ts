@@ -20,6 +20,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { AuthService } from './shared/services/auth.service';
+import { AuthGuard, protectGuard } from './shared/guard/auth.guard';
+import { CrudService } from './shared/services/crud.service';
 
 
 
@@ -40,7 +42,7 @@ import { AuthService } from './shared/services/auth.service';
     AngularFirestoreModule,
     FormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,protectGuard,AuthGuard,CrudService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
